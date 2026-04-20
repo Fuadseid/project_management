@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
  
-const blogSchema = mongoose.Schema({
+const projectSchema = mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -9,6 +9,19 @@ const blogSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+    required: true,
+  },
+  link: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: ['active', 'inactive'],
+    required: true,
+  },
 });
-const Blog = mongoose.model('Blog', blogSchema);
-module.exports = Blog;
+const Project = mongoose.model('Project', projectSchema);
+module.exports = Project;
