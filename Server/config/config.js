@@ -14,6 +14,9 @@ if (error) {
 module.exports = {
   dbConnection: value.DB_CONNECTION,
   port:value.PORT,
+  mongodb_uri: value.MONGODB_URI,
+  db_name: value.DB_NAME,
+
   nodeEnv: value.NODE_ENV,
   email:value.EMAIL,
   emailpassword:value.EMAIL_PASSWORD,
