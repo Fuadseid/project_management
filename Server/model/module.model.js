@@ -1,5 +1,24 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const moduleSchema = mongoose.Schema({
-    
-})
+  project_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Project",
+    required: true,
+  },
+  epic_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Epic",
+    default: null,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+});
+const Module = mongoose.model("Module", moduleSchema);
+module.exports = Module;
