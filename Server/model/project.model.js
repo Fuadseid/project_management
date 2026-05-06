@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
- 
+const mongoose = require("mongoose");
+
 const projectSchema = mongoose.Schema({
   title: {
     type: String,
@@ -19,9 +19,24 @@ const projectSchema = mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['active', 'inactive', 'completed'],
+    enum: ["active", "inactive", "completed"],
     required: true,
   },
+  estimated_time: {
+    type: Date,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now,
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
-const Project = mongoose.model('Project', projectSchema);
+const Project = mongoose.model("Project", projectSchema);
 module.exports = Project;

@@ -19,6 +19,21 @@ const moduleSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  estimated_time: {
+    type: Date,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now,
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 const Module = mongoose.model("Module", moduleSchema);
 module.exports = Module;
